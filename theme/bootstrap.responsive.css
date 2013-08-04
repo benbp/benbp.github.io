@@ -59,7 +59,11 @@
 }
 }
 @media (max-width:768px) {
-    .container {
+ .profile {
+     display: none;
+     visibility: hidden;
+}
+ .container {
     width: auto;
     padding: 0 20px;
 }
