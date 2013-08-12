@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ben Broderick Phillips</title><link href="/" rel="alternate"></link><link href="/feeds/all-en.atom.xml" rel="self"></link><id>/</id><updated>2013-07-28T00:00:00-07:00</updated><entry><title>First Post</title><link href="/first-post.html" rel="alternate"></link><updated>2013-07-28T00:00:00-07:00</updated><author><name>Ben Broderick Phillips</name></author><id>tag:,2013-07-28:first-post.html</id><summary type="html">&lt;p&gt;This is either the beginning of a long blogging journey, or an optimistic
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ben Broderick Phillips</title><link href="http://benbp.net/" rel="alternate"></link><link href="http://benbp.net/feeds/all-en.atom.xml" rel="self"></link><id>http://benbp.net/</id><updated>2013-08-11T00:00:00-07:00</updated><entry><title>The Ecuadorean Library</title><link href="http://benbp.net/bruce-sterling-ecuadorean.html" rel="alternate"></link><updated>2013-08-11T00:00:00-07:00</updated><author><name>Ben Broderick Phillips</name></author><id>tag:benbp.net,2013-08-11:bruce-sterling-ecuadorean.html</id><summary type="html">&lt;p&gt;For anyone following the recent NSA leaks, &lt;a href="https://medium.com/geek-empire-1/a1ebd2b4a0e5"&gt;this
+essay&lt;/a&gt; by Bruce Sterling
+provides what you might call a theatrical portrayal of the situation. It is at
+once wildly insightful, humorous, despairing, and hopeful. Do read.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can tell that Manning, Assange and Snowden are all the same kind of
+irritant, because, somehow, amazingly, the planet’s response is to physically
+squish them. They’re all online big-time, and their digital shadow is huge, so
+the response is just to squeeze their mortal human bodies, literally, legally,
+extra-legally, by whatever means becomes available.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="https://medium.com/geek-empire-1/a1ebd2b4a0e5"&gt;Bruce Sterling - The Ecuadorian Library&lt;/a&gt;&lt;/p&gt;</summary></entry><entry><title>First Post</title><link href="http://benbp.net/first-post.html" rel="alternate"></link><updated>2013-07-28T00:00:00-07:00</updated><author><name>Ben Broderick Phillips</name></author><id>tag:benbp.net,2013-07-28:first-post.html</id><summary type="html">&lt;p&gt;This is either the beginning of a long blogging journey, or an optimistic
 first post on yet another site that I will create and eventually abandon to the
 depths of the internet. I hope it is the former. Here is what you can expect to
 hear from me should you decide to follow this blog:&lt;/p&gt;
