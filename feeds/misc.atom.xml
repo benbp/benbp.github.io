@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ben Broderick Phillips</title><link href="http://benbp.net/" rel="alternate"></link><link href="http://benbp.net/feeds/misc.atom.xml" rel="self"></link><id>http://benbp.net/</id><updated>2013-08-19T00:00:00-07:00</updated><entry><title>Lunch with the Financial Times</title><link href="http://benbp.net/lunch-with-times.html" rel="alternate"></link><updated>2013-08-19T00:00:00-07:00</updated><author><name>Ben Broderick Phillips</name></author><id>tag:benbp.net,2013-08-19:lunch-with-times.html</id><summary type="html">&lt;p&gt;Despite it's occasional snoodiness, the article series Lunch with the Financial
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ben Broderick Phillips</title><link href="http://benbp.net/" rel="alternate"></link><link href="http://benbp.net/feeds/misc.atom.xml" rel="self"></link><id>http://benbp.net/</id><updated>2013-08-19T00:00:00-07:00</updated><entry><title>Government Backed Public Keys</title><link href="http://benbp.net/gov-backed-pgp-key.html" rel="alternate"></link><updated>2013-08-19T00:00:00-07:00</updated><author><name>Ben Broderick Phillips</name></author><id>tag:benbp.net,2013-08-19:gov-backed-pgp-key.html</id><summary type="html">&lt;p&gt;&lt;a href="http://teddziuba.com/post/58735980543/how-the-nsa-could-stop-sucking-and-be-awesome-instead"&gt;Ted
+Dziuba&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I already have federally-issued documentation of my citizenship, my US
+Passport. There ought to be a way to get my PGP key signed by the government,
+so I can sign my messages as an American citizen, having the government be the
+trusted authority on that matter.&lt;/p&gt;
+&lt;p&gt;This is interesting because it doesn’t compromise my privacy. My private key is
+still private, but the government, through a verification process similar to
+the passport process, has declared they trust me to be an American citizen.&lt;/p&gt;
+&lt;p&gt;This could be added as a signal for NSA collection systems, since the NSA ought
+to trust its own key-signing authority, it can be absolutely sure that an
+encrypted communication it intercepts is from an American citizen, and thus
+discard it.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I like this idea, with the emphasis on it being an opt-in service. 
+Obviously one issue is that it would make it even easier to track
+WHO we are communicating to. However, since the NSA already does this easily,
+preventing them from doing so has to be accomplished by regulation and
+oversight, not by technological safeguards.&lt;/p&gt;</summary></entry><entry><title>Lunch with the Financial Times</title><link href="http://benbp.net/lunch-with-times.html" rel="alternate"></link><updated>2013-08-19T00:00:00-07:00</updated><author><name>Ben Broderick Phillips</name></author><id>tag:benbp.net,2013-08-19:lunch-with-times.html</id><summary type="html">&lt;p&gt;Despite it's occasional snoodiness, the article series Lunch with the Financial
 Times will make both your brain and your mouth salivate. I think what I like
 most about it is the interesting opinions that get mentioned only in passing,
 leaving you to do the unraveling:&lt;/p&gt;
