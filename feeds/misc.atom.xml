@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ben Broderick Phillips</title><link href="http://benbp.net/" rel="alternate"></link><link href="http://benbp.net/feeds/misc.atom.xml" rel="self"></link><id>http://benbp.net/</id><updated>2013-09-02T00:00:00-07:00</updated><entry><title></title><link href="http://benbp.net/2013/Sep/02/lone-wolf-and-cub-v9-p103.html" rel="alternate"></link><updated>2013-09-02T00:00:00-07:00</updated><author><name>Ben Broderick Phillips</name></author><id>tag:benbp.net,2013-09-02:2013/Sep/02/lone-wolf-and-cub-v9-p103.html</id><summary type="html">&lt;p&gt;&lt;img alt="Lone Wolf and Cub, volume 9, page 103" src="/static/images/lone-wolf-and-cub-v9-p103.jpg" /&gt;&lt;/p&gt;</summary><category term="manga"></category></entry><entry><title>Government Backed Public Keys</title><link href="http://benbp.net/2013/Aug/19/gov-backed-pgp-key.html" rel="alternate"></link><updated>2013-08-19T00:00:00-07:00</updated><author><name>Ben Broderick Phillips</name></author><id>tag:benbp.net,2013-08-19:2013/Aug/19/gov-backed-pgp-key.html</id><summary type="html">&lt;p&gt;&lt;a href="http://teddziuba.com/post/58735980543/how-the-nsa-could-stop-sucking-and-be-awesome-instead"&gt;Ted
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ben Broderick Phillips</title><link href="http://benbp.net/" rel="alternate"></link><link href="http://benbp.net/feeds/misc.atom.xml" rel="self"></link><id>http://benbp.net/</id><updated>2013-10-05T00:00:00-07:00</updated><entry><title>Brainstorming a smart house</title><link href="http://benbp.net/2013/Oct/05/brainstorming-a-smart-house.html" rel="alternate"></link><updated>2013-10-05T00:00:00-07:00</updated><author><name>Ben Broderick Phillips</name></author><id>tag:benbp.net,2013-10-05:2013/Oct/05/brainstorming-a-smart-house.html</id><summary type="html">&lt;p&gt;As I am about to sign my first lease on a house, I am going to have the
+opportunity to do something I've wanted to do for a long time: 
+create a smart home (technically, I'm more interested in home automation
+projects, but that term isn't as sexy as &lt;em&gt;smart home&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;One of my housemates and I have been talking a little bit about building a
+budget roomba, a.k.a. a dust-buster on wheels, but that will probably take a
+while and I want this house to be smart right away god-damnit!&lt;/p&gt;
+&lt;p&gt;So, writing this post is a way for me to brainstorm quick ideas for my new
+home. My first thoughts go to the ever dependable
+&lt;a href="http://inventables.com"&gt;inventables&lt;/a&gt; website, and all of the fun materials and
+sensors they have available there. What comes to mind right away are &lt;a href="https://www.inventables.com/technologies/conductive-foam-sensor"&gt;conductive foam
+sensors&lt;/a&gt;,
+lovely things that let you close circuits by doing things such as
+sitting down in a chair or stepping on a mat.&lt;/p&gt;
+&lt;p&gt;The other question is what do I want to automate? Well, I would love to create a
+house that is responsive to my sleep schedule. So here's an idea, given
+conductive foam and sleep as criteria:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Place the foam sensor under a mattress, and hook it up to a microprocessor 
+  that controls a lamp dimmer or LED array and has a good clock. Easy slow-wake 
+  alarm clock. A step up from conductive foam would be to embed an
+  accelerometer in the bed.
+  There is an iPhone app called &lt;a href="http://www.sleepcycle.com"&gt;Sleep Cycle&lt;/a&gt; that 
+  uses the built-in accelerometer to estimate where you are in a REM cycle, and 
+  hasten or delay an alarm accordingly. I would love to copy this idea but have
+  the sensing trigger a lamp rather than an alarm, especially one that wouldn't
+  require me to have my iPhone on the corner of my bed all night long.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Non-utilitarian ideas&lt;/h2&gt;
+&lt;p&gt;Granted, these are easier to come up with and are more fun:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It would be really cool to have a glowing orb in the living room that
+  coordinates it's color and brightness to house-wide internet bandwidth usage.&lt;/li&gt;
+&lt;li&gt;I would be amused if each cupboard in the kitchen played a different song
+  when you opened it. The spice cabinet could play spice girls, and the pasta
+  cabinet could play Pavarotti.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I think this is a good start. Updates to come...&lt;/p&gt;</summary><category term="smart house"></category><category term="microprocessor"></category><category term="electronics"></category></entry><entry><title></title><link href="http://benbp.net/2013/Sep/02/lone-wolf-and-cub-v9-p103.html" rel="alternate"></link><updated>2013-09-02T00:00:00-07:00</updated><author><name>Ben Broderick Phillips</name></author><id>tag:benbp.net,2013-09-02:2013/Sep/02/lone-wolf-and-cub-v9-p103.html</id><summary type="html">&lt;p&gt;&lt;img alt="Lone Wolf and Cub, volume 9, page 103" src="/static/images/lone-wolf-and-cub-v9-p103.jpg" /&gt;&lt;/p&gt;</summary><category term="manga"></category></entry><entry><title>Government Backed Public Keys</title><link href="http://benbp.net/2013/Aug/19/gov-backed-pgp-key.html" rel="alternate"></link><updated>2013-08-19T00:00:00-07:00</updated><author><name>Ben Broderick Phillips</name></author><id>tag:benbp.net,2013-08-19:2013/Aug/19/gov-backed-pgp-key.html</id><summary type="html">&lt;p&gt;&lt;a href="http://teddziuba.com/post/58735980543/how-the-nsa-could-stop-sucking-and-be-awesome-instead"&gt;Ted
 Dziuba&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;I already have federally-issued documentation of my citizenship, my US
