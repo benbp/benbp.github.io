@@ -1,5 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ben Broderick Phillips</title><link href="http://benbp.net/" rel="alternate"></link><link href="http://benbp.net/feeds/all.atom.xml" rel="self"></link><id>http://benbp.net/</id><updated>2013-10-05T00:00:00-07:00</updated><entry><title>Brainstorming a smart house</title><link href="http://benbp.net/2013/Oct/05/brainstorming-a-smart-house.html" rel="alternate"></link><updated>2013-10-05T00:00:00-07:00</updated><author><name>Ben Broderick Phillips</name></author><id>tag:benbp.net,2013-10-05:2013/Oct/05/brainstorming-a-smart-house.html</id><summary type="html">&lt;p&gt;As I am about to sign my first lease on a house, I am going to have the
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ben Broderick Phillips</title><link href="http://benbp.net/" rel="alternate"></link><link href="http://benbp.net/feeds/all.atom.xml" rel="self"></link><id>http://benbp.net/</id><updated>2014-01-13T00:00:00-08:00</updated><entry><title>Information as food</title><link href="http://benbp.net/2014/Jan/13/information-as-food.html" rel="alternate"></link><updated>2014-01-13T00:00:00-08:00</updated><author><name>Ben Broderick Phillips</name></author><id>tag:benbp.net,2014-01-13:2014/Jan/13/information-as-food.html</id><summary type="html">&lt;p&gt;Lately I've been noticing a lot of people writing and talking about information 
+consumption by using a food metaphor
+(&lt;a href="http://www.marco.org/2014/01/03/the-builders-high"&gt;example&lt;/a&gt;). I was going to 
+write a post about it until I found that someone already did a great job of
+that over at ribbonfarm:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.ribbonfarm.com/2008/05/26/information-overload-and-the-food-is-thought-metaphor/"&gt;http://www.ribbonfarm.com/2008/05/26/information-overload-and-the-food-is-thought-metaphor/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The article centers on metaphor theory, particularly as introduced by Lakoff
+and Johnson in their book 
+&lt;a href="http://books.google.com/books?id=r6nOYYtxzUoC&amp;amp;printsec=frontcover#v=onepage&amp;amp;q&amp;amp;f=false"&gt;Metaphors We Live By&lt;/a&gt;.
+If you haven't read it, you should read it. It will probably change the way you
+think about thinking significantly. The gist of the book, though, is that 
+basic conceptual metaphors pervade our understandings and descriptions
+of the world. Some examples:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Time as money ("spending time", "saving time")&lt;/li&gt;
+&lt;li&gt;Arguments as war ("attacking a point")&lt;/li&gt;
+&lt;li&gt;Good and bad as up and down ("feeling up", "things are going downhill"). This
+is an example of an &lt;em&gt;orientational metaphor&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Love as a journey.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This quote from the ribbonfarm article stood out to me:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Conceptual metaphors are always partial, and highlight some features of a
+domain while de-emphasizing others.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This quote communicates a point that I think is pretty important,
+especially in relation to the ongoing, raging debate about whether all this
+"information overload" is good or bad for us (which I think has some merit, but
+also tends to contain a little too much generational pessimism). If the stream
+of information we are exposed to on the internet were actually food, obviously 
+gorging on it the way many do would be quite unhealthy, and I think many people
+have the concerns they have about excessive information exactly because of this
+intuitive association of information as food. So, as the article also advises, I 
+think it's important to be aware, when forming opinions about emerging
+phenomena like the internet, of the conceptual metaphors or frames of reference 
+we bring to those phenomena in order to understand them in a personal way, and 
+how that affects what features of that phenomena we emphasize and de-emphasize.&lt;/p&gt;</summary><category term="metaphor"></category><category term="information"></category></entry><entry><title>Brainstorming a smart house</title><link href="http://benbp.net/2013/Oct/05/brainstorming-a-smart-house.html" rel="alternate"></link><updated>2013-10-05T00:00:00-07:00</updated><author><name>Ben Broderick Phillips</name></author><id>tag:benbp.net,2013-10-05:2013/Oct/05/brainstorming-a-smart-house.html</id><summary type="html">&lt;p&gt;As I am about to sign my first lease on a house, I am going to have the
 opportunity to do something I've wanted to do for a long time: 
 create a smart home (technically, I'm more interested in home automation
 projects, but that term isn't as sexy as &lt;em&gt;smart home&lt;/em&gt;).&lt;/p&gt;
