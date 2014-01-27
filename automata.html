@@ -18,12 +18,9 @@
         #reset_button {
             float: right;
         }
-        #buttons {
-        }
-        #button_text {
-            text-align: center;
-            width: 160px;
-            margin-bottom: 15px;
+        #select_text {
+            float: left;
+            margin-right: 10px;
         }
         #steps {
             width: 300px;
@@ -32,7 +29,6 @@
         }
     </style>
 </head>
-<!-- =========================== -->
 <body>
     <div id="game_zone"></div>
     <div id="work_zone">
@@ -42,18 +38,11 @@
             <div class="button" id="reset_button"></div>
             <div class="button" id="undo_button"></div>
         </div>
-        <div id="button_text">
-            <pre>Run    Undo   Reset</pre>
-        </div>
         <div id="puzzle_zone"></div>
-        <p>Ben's Best: <span id="bensbest"></span> moves<br />
+        <p>Best Solution: <span id="best_solution"></span> moves<br />
         You've made: <span id="yourbest">0</span> moves</p>
-        <p>
-            To change levels, press 0-8.<br />
-            To share your steps on a level with me, press p<br />
-        </p>
-        <div id="steps"></div>
+        <span id="select_text">Select Level: </span>
+        <select id="level_selector"></select>
     </div>
 </body>
-<!-- =========================== -->
 </html>

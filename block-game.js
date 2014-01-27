@@ -9,7 +9,7 @@ function init_zone(zone_obj, block_size, num_blocks, rounded_rect){
         for(var x = 0; x < this.num_blocks; x++){
             this.blocks.push([]);
             for(var y = 0; y < this.num_blocks; y++){
-                this.blocks[x].push(this.rect(x*this.block_size, y*this.block_size,
+                this.blocks[x].push(this.rect(x*this.block_size+1, y*this.block_size+1,
                                     this.block_size, this.block_size, this.rounded_rect));
                 this.blocks[x][y].val = 0;
                 this.blocks[x][y].attr({"fill": blank_fill, "stroke": stroke});
@@ -139,6 +139,7 @@ function run_pattern(dz, gz, undos){
 }
 
 function push_undo(undos, gz, dz){
+    console.log(JSON.stringify(undos))
     update(gz);
 
     var gz_snapshot = [];
@@ -162,7 +163,7 @@ function push_undo(undos, gz, dz){
 
 function set_start(gz, pz, lvl, active_fill){
     document.getElementById('yourbest').innerHTML = 0;
-    document.getElementById('bensbest').innerHTML = lvl.bensbest;
+    document.getElementById('best_solution').innerHTML = lvl.best_solution;
     gz.clear_blocks();
     pz.clear_blocks();
     for(var i = 0; i < lvl.game_positions.length; i++){
@@ -181,7 +182,8 @@ function create_game(size, lvl, levels){
     button_height = size/20;
     document.getElementById('game_zone').style['margin-right']=margin;
     document.getElementById('draw_zone').style['margin-top']=margin;
-    document.getElementById('puzzle_zone').style['margin-bottom']=margin;
+    document.getElementById('draw_zone').style['margin-bottom']=margin;
+    document.getElementById('puzzle_zone').style['margin-top']=margin;
     buttons = document.getElementsByClassName('button');
     for(var i = 0; i < length; i++){
         buttons[i].style.width=button_width;
@@ -214,9 +216,9 @@ function create_game(size, lvl, levels){
     var undos = [];
 
     // var zone = new Raphael(document.getElementById('zone'), width, height);
-    var gz = new Raphael(document.getElementById('game_zone'), gz_size, gz_size);
-    var dz = new Raphael(document.getElementById('draw_zone'), dz_size, dz_size);
-    var pz = new Raphael(document.getElementById('puzzle_zone'), pz_size, pz_size);
+    var gz = new Raphael(document.getElementById('game_zone'), gz_size+2, gz_size+2);
+    var dz = new Raphael(document.getElementById('draw_zone'), dz_size+2, dz_size+2);
+    var pz = new Raphael(document.getElementById('puzzle_zone'), pz_size+2, pz_size+2);
     var db = new Raphael(document.getElementById('draw_button'), db_width, db_height);
     var ub = new Raphael(document.getElementById('undo_button'), ub_width, ub_height);
     var rb = new Raphael(document.getElementById('reset_button'), rb_width, ub_height);
@@ -252,21 +254,50 @@ function create_game(size, lvl, levels){
     pz.init_blocks();
     dz.init_drawing();
     db.button = db.rect(0, 0, db_width, db_height, button_round).attr({"fill": "#777"});
-    //db.text = db.text(button_height/2, button_height/2, "Run").attr({'text-anchor': 'start'});
+    db.txt = db.text(db_width/2, db_height/2, "Run").attr({
+        "font-size": "12px",
+        "font-weight": "bold",
+    });
     db.button.mousedown(
         function(){
             run_pattern(dz, gz, undos);
             update(gz);
         }
     );
+    db.txt.mousedown(
+        function(){
+            run_pattern(dz, gz, undos);
+            update(gz);
+        }
+    );
     ub.button = ub.rect(0, 0, ub_width, ub_height, button_round).attr({"fill": "088"});
+    ub.txt = ub.text(ub_width/2, ub_height/2, "Undo").attr({
+        "font-size": "12px",
+        "font-weight": "bold",
+    });
     ub.button.mousedown(
         function(){
             undo(undos, gz, dz);
         }
     );
+    ub.txt.mousedown(
+        function(){
+            undo(undos, gz, dz);
+        }
+    );
     rb.button = rb.rect(0, 0, rb_width, rb_height, button_round).attr({"fill": "922"});
+    rb.txt = rb.text(rb_width/2, rb_height/2, "Reset").attr({
+        "font-size": "12px",
+        "font-weight": "bold",
+    });
     rb.button.mousedown(
+        function(){
+            undos = [{gz: lvl.game_positions, dz: []}];
+            document.getElementById("yourbest").innerHTML = 0;
+            undo(undos, gz, dz);
+        }
+    );
+    rb.txt.mousedown(
         function(){
             undos = [{gz: lvl.game_positions, dz: []}];
             document.getElementById("yourbest").innerHTML = 0;
@@ -275,118 +306,170 @@ function create_game(size, lvl, levels){
     );
     set_start(gz, pz, lvl, active_fill);
 
-    // developer, for recording puzzles
-    document.onkeydown = function(e){
-        if(e.keyCode == 80){
-            push_undo(undos, gz, dz);
-            log = {game_start: lvl.game_positions, 
-                    goal_start: lvl.goal_positions,
-                    steps: undos,
-                    num_steps: undos.length,
-            }
-            console.log(JSON.stringify(log));
-            document.getElementById('steps').innerHTML = "<b>copy this text and e-mail to me<br />ignore the num_steps number, it's wrong</b><br />" + JSON.stringify(log)
-        }
-        else if(e.keyCode >= 48 && e.keyCode <= 57){
-            undos = [];
-            lvl = levels[e.keyCode-48];
-            dz.clear_blocks();
-            set_start(gz, pz, lvl, active_fill, blank_fill);
-        }
+    var l = document.getElementById("level_selector");
+    for(var i = 1; i <= levels.length; i++){
+        option = "<option>Level " + i + "</option>";
+        l.innerHTML += option;
+    }
+
+    document.getElementById("level_selector").onchange = function() {
+        undos = [];
+        lvl = levels[this.selectedIndex];
+        dz.clear_blocks();
+        set_start(gz, pz, lvl, active_fill, blank_fill);
     }
 }
 
-levels = {};
-for(var i = 0; i < 10; i++){
-    levels[i] = {};
-}
-
-levels[0].game_positions = [
-        [2, 2]
-    ];
-levels[0].goal_positions = [
-        [1, 1],     [3, 1],
-              [2, 2],
-        [1, 3],     [3, 3]
-    ];
-levels[0].bensbest = 1;
-levels[1].game_positions = [
-        [0, 0],                 [4, 0],
-        [0, 1],                 [4, 1],
-        [0, 2], [1, 2], [3, 2], [4, 2],
-        [0, 3],                 [4, 3],
-        [0, 4],                 [4, 4]
-    ];
-levels[1].goal_positions = [
-        [0, 0], [1, 0], [3, 0], [4, 0],
-                [1, 1], [3, 1],
-        [0, 2], [1, 2], [3, 2], [4, 2],
-                [1, 3], [3, 3],
-        [0, 4], [1, 4], [3, 4], [4, 4]
-    ];
-levels[1].bensbest = 2;
-levels[2].game_positions = [
-        [1, 1],
-            [2, 2],
-                [3, 3]
-    ];
-levels[2].goal_positions = [
-                [1, 3],
-            [2, 2],
-        [3, 1]
-    ];
-levels[2].bensbest = 3;
-levels[3].game_positions = [
-    [0, 0], [1, 0], [2, 0], [3, 0], [4, 0],
-        [1, 1],         [3, 1],
+levels = [
+    // Level 1
+    {
+        "game_positions": [
                 [2, 2]
-];
-levels[3].goal_positions = [
+            ],
+        "goal_positions": [
+                [1, 1],     [3, 1],
+                      [2, 2],
+                [1, 3],     [3, 3]
+            ],
+        "best_solution": 1
+    },
+    // Level 2
+    {
+        "game_positions": [
+                [0, 0],                 [4, 0],
+                [0, 1],                 [4, 1],
+                [0, 2], [1, 2], [3, 2], [4, 2],
+                [0, 3],                 [4, 3],
+                [0, 4],                 [4, 4]
+            ],
+        "goal_positions": [
+                [0, 0], [1, 0], [3, 0], [4, 0],
+                        [1, 1], [3, 1],
+                [0, 2], [1, 2], [3, 2], [4, 2],
+                        [1, 3], [3, 3],
+                [0, 4], [1, 4], [3, 4], [4, 4]
+            ],
+        "best_solution": 2
+    },
+    // Level 3
+    {
+        "game_positions": [
+                [1, 1],
                     [2, 2],
-              [1, 3],     [3, 3],
-    [0, 4], [1, 4], [2, 4], [3, 4], [4, 4]
-];
-levels[3].bensbest = 8;
-levels[4].game_positions = [
-    [0,2],[0,4],[1,1],[2,0],[2,2],[2,4],[3,3],[4,0],[4,2]
-];
-levels[4].goal_positions = [
-    [0,0],[0,2],[1,3],[2,0],[2,2],[2,4],[3,1],[4,2],[4,4]
-];
-levels[4].bensbest = 4;
-levels[5].game_positions = [
-    [0,1],[0,3],[1,2],[2,2],[3,2],[4,1],[4,3]
-];
-levels[5].goal_positions = [
-    [1,1],[1,3],[3,1],[3,3]
-];
-levels[5].bensbest = 2;
-levels[6].game_positions = [
-    [0, 0],                 [4, 0],
-    [0, 1],                 [4, 1],
-    [0, 2], [1, 2], [3, 2], [4, 2],
-    [0, 3],                 [4, 3],
-    [0, 4],                 [4, 4]
-];
-levels[6].goal_positions = [
-    [0,0],[0,1],[0,3],[0,4],[1,0],[1,3],[3,0],[3,3],[4,0],[4,1],[4,3],[4,4]
-];
-levels[6].bensbest = 2;
-levels[7].game_positions = [
-    [2, 2]
-];
-levels[7].goal_positions = [
-    [0,0],[0,1],[0,3],[0,4],[1,0],[1,1],[1,3],[1,4],[3,0],[3,1],[3,3],[3,4],[4,0],[4,1],[4,3],[4,4]
-];
-levels[7].bensbest = 2;
-levels[8].game_positions = [
-    [2, 2]
-];
-levels[8].goal_positions = [
-    [0,0],[0,1],[0,3],[0,4],[1,0],[1,1],[1,3],[1,4],[2,2],[3,0],[3,1],[3,3],[3,4],[4,0],[4,1],[4,3],[4,4]
-];
-levels[8].bensbest = 3;
-
+                        [3, 3]
+            ],
+        "goal_positions": [
+                        [1, 3],
+                    [2, 2],
+                [3, 1]
+            ],
+        "best_solution": 3
+    },
+    // Level 4
+    {
+        "game_positions": [
+            [0, 0], [1, 0], [2, 0], [3, 0], [4, 0],
+                [1, 1],         [3, 1],
+                        [2, 2]
+        ],
+        "goal_positions": [
+                            [2, 2],
+                      [1, 3],     [3, 3],
+            [0, 4], [1, 4], [2, 4], [3, 4], [4, 4]
+        ],
+        "best_solution": 8
+    },
+    // Level 5
+    {
+        "game_positions": [
+            [0,2],[0,4],[1,1],[2,0],[2,2],[2,4],[3,3],[4,0],[4,2]
+        ],
+        "goal_positions": [
+            [0,0],[0,2],[1,3],[2,0],[2,2],[2,4],[3,1],[4,2],[4,4]
+        ],
+        "best_solution": 4
+    },
+    // Level 6
+    {
+        "game_positions": [
+            [0,1],[0,3],[1,2],[2,2],[3,2],[4,1],[4,3]
+        ],
+        "goal_positions": [
+            [1,1],[1,3],[3,1],[3,3]
+        ],
+        "best_solution": 2
+    },
+    // Level 7
+    {
+        "game_positions": [
+            [0, 0],                 [4, 0],
+            [0, 1],                 [4, 1],
+            [0, 2], [1, 2], [3, 2], [4, 2],
+            [0, 3],                 [4, 3],
+            [0, 4],                 [4, 4]
+        ],
+        "goal_positions": [
+            [0,0],[0,1],[0,3],[0,4],[1,0],[1,3],[3,0],[3,3],[4,0],[4,1],[4,3],[4,4]
+        ],
+        "best_solution": 2
+    },
+    // Level 8
+    {
+        "game_positions": [
+            [2, 2]
+        ],
+        "goal_positions": [
+            [0,0],[0,1],[0,3],[0,4],[1,0],[1,1],[1,3],[1,4],[3,0],[3,1],[3,3],[3,4],[4,0],[4,1],[4,3],[4,4]
+        ],
+        "best_solution": 2
+    },
+    // Level 9
+    {
+        "game_positions": [
+            [2, 2]
+        ],
+        "goal_positions": [
+            [0,0],[0,1],[0,3],[0,4],[1,0],[1,1],[1,3],[1,4],[2,2],[3,0],[3,1],[3,3],[3,4],[4,0],[4,1],[4,3],[4,4]
+        ],
+        "best_solution": 3
+    },
+    // Level 10
+    {
+        "game_positions": [
+            
+              [1, 1],               [4, 1],
+                      [2, 2],
+                             [3, 3],
+                                    [4, 4],
+        ],
+        "goal_positions": [
+                      [2, 0],
+              
+        [0, 2],                     [4, 2],
+                                    
+                      [2, 4],
+        ],
+        "best_solution": 5
+    },
+    // Level 11
+    {
+        "game_positions": [
+            
+              [1, 1],               [4, 1],
+                      [2, 2],
+                             [3, 3],
+                                    [4, 4],
+        ],
+        "goal_positions": [
+                      [2, 0],
+               [1, 1],       [3, 1],
+        [0, 2],       [2, 2],       [4, 2],
+               [1, 3],       [3, 3],
+        [0, 4],                     [4, 4],
+        ],
+        "best_solution": 4
+    },
+]
 
 window.onload = function(){
     if(window.innerHeight < window.innerWidth){
